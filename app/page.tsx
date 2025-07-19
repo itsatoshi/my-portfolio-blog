@@ -5,79 +5,65 @@ import {
   Button,
   Container,
   Heading,
-  HStack,
-  SimpleGrid,
   Text,
   VStack,
 } from '@chakra-ui/react';
-
-import { brandColors, spacing } from '../theme/utils';
-import ColorShowcase from './components/ColorShowcase';
-import TestFont from './test-font';
+import Link from 'next/link';
 
 export default function Home() {
-  const cardStyles = {
-    bg: 'white',
-    borderRadius: 'xl',
-    boxShadow: 'card',
-    p: 6,
-    transition: 'all 0.3s ease-in-out',
-    _hover: {
-      boxShadow: 'cardHover',
-      transform: 'translateY(-4px)',
-    },
-  };
-
   return (
-    <Container maxW="container.xl">
-      <VStack spacing={spacing.xl} align="center" py={16}>
-        {/* Color Showcase */}
-        <ColorShowcase />
-        
-        {/* Font Test Section */}
-        <TestFont />
-        
-        {/* Original Content */}
-        <Box textAlign="center">
-          <Heading variant="primary" size="2xl" mb={4}>
-            Welcome to My Portfolio Blog
+    <Container maxW="container.lg" py={12}>
+      <VStack spacing={8} textAlign="center">
+        <Box>
+          <Heading size="3xl" mb={4} color="brand.600">
+            Welcome to My Portfolio
           </Heading>
-          <Text variant="subtitle" maxW="2xl">
+          <Text fontSize="xl" color="neutral.700" maxW="2xl" lineHeight="tall">
             A modern portfolio blog built with Next.js, Chakra UI, and a
-            sophisticated muted earth tone palette featuring custom typography
+            carefully crafted design system featuring warm golden-pink tones and
+            contemporary typography.
           </Text>
         </Box>
 
-        {/* Technology Stack */}
-        <VStack spacing={spacing.md}>
-          <Heading variant="secondary" size="lg">
-            Technology Stack
-          </Heading>
-          <HStack spacing={spacing.sm} flexWrap="wrap" justify="center">
-            <Button variant="solid" size="sm">
-              React 19
-            </Button>
-            <Button variant="earth" size="sm">
-              Next.js 15
-            </Button>
-            <Button variant="sage" size="sm">
-              Chakra UI
-            </Button>
-            <Button variant="outline" size="sm">
-              TypeScript
-            </Button>
-          </HStack>
+        <VStack spacing={4}>
+          <Button as={Link} href="/design-system">
+            View Design System
+          </Button>
+
+          <Text fontSize="sm" color="neutral.600">
+            Explore our typography, color palette, and component library
+          </Text>
         </VStack>
 
-        {/* Call to Action */}
-        <HStack spacing={spacing.md}>
-          <Button variant="solid" size="lg">
-            Get Started
-          </Button>
-          <Button variant="outline" size="lg">
-            View Portfolio
-          </Button>
-        </HStack>
+        <Box
+          bg="neutral.50"
+          border="1px solid"
+          borderColor="neutral.200"
+          borderRadius="lg"
+          p={8}
+          maxW="2xl"
+        >
+          <Heading size="lg" mb={4} color="brand.600">
+            Built with Modern Tools
+          </Heading>
+          <VStack spacing={3} align="start">
+            <Text color="neutral.700">
+              <strong>Typography:</strong> Sora for headings, Zen Maru Gothic
+              for body text
+            </Text>
+            <Text color="neutral.700">
+              <strong>Colors:</strong> Warm golden-pink palette with dusty rose,
+              warm bronze, and sage tones
+            </Text>
+            <Text color="neutral.700">
+              <strong>Framework:</strong> Next.js 14 with App Router and
+              TypeScript
+            </Text>
+            <Text color="neutral.700">
+              <strong>UI Library:</strong> Chakra UI with custom theme system
+            </Text>
+          </VStack>
+        </Box>
       </VStack>
     </Container>
   );

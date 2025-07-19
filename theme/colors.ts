@@ -1,97 +1,107 @@
+// Base muted warm tones
+const baseColors = {
+  dustyRose: '#795e6b', // Muted pinkish-purple (brand primary)
+  blushBrown: '#9c7e7d', // Muted brownish-pink (accent)
+  warmBronze: '#b18c65', // Muted golden-brown (earth)
+  oliveBuff: '#bdb37e', // Muted olive-yellow (sage)
+  sageMist: '#adb89b', // Muted sage green (neutral)
+  pureWhite: '#ffffff', // Pure white
+  deepBlack: '#000000', // Pure black
+};
+
+// Generate color scales for each base color
+const generateColorScale = (baseHex: string) => {
+  // Convert hex to HSL for manipulation
+  const hexToHsl = (hex: string) => {
+    const r = parseInt(hex.slice(1, 3), 16) / 255;
+    const g = parseInt(hex.slice(3, 5), 16) / 255;
+    const b = parseInt(hex.slice(5, 7), 16) / 255;
+
+    const max = Math.max(r, g, b);
+    const min = Math.min(r, g, b);
+    let h = 0,
+      s = 0,
+      l = (max + min) / 2;
+
+    if (max !== min) {
+      const d = max - min;
+      s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+      switch (max) {
+        case r:
+          h = (g - b) / d + (g < b ? 6 : 0);
+          break;
+        case g:
+          h = (b - r) / d + 2;
+          break;
+        case b:
+          h = (r - g) / d + 4;
+          break;
+      }
+      h /= 6;
+    }
+
+    return [h * 360, s * 100, l * 100];
+  };
+
+  const hslToHex = (h: number, s: number, l: number) => {
+    h /= 360;
+    s /= 100;
+    l /= 100;
+    const a = s * Math.min(l, 1 - l);
+    const f = (n: number) => {
+      const k = (n + h * 12) % 12;
+      const color = l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
+      return Math.round(255 * color)
+        .toString(16)
+        .padStart(2, '0');
+    };
+    return `#${f(0)}${f(8)}${f(4)}`;
+  };
+
+  const [h, s, l] = hexToHsl(baseHex);
+
+  return {
+    50: hslToHex(h, Math.max(s - 40, 10), Math.min(l + 35, 95)),
+    100: hslToHex(h, Math.max(s - 30, 15), Math.min(l + 25, 85)),
+    200: hslToHex(h, Math.max(s - 20, 20), Math.min(l + 15, 75)),
+    300: hslToHex(h, Math.max(s - 10, 25), Math.min(l + 8, 65)),
+    400: hslToHex(h, s, Math.min(l + 3, 55)),
+    500: baseHex,
+    600: hslToHex(h, Math.min(s + 5, 80), Math.max(l - 8, 25)),
+    700: hslToHex(h, Math.min(s + 10, 85), Math.max(l - 15, 20)),
+    800: hslToHex(h, Math.min(s + 15, 90), Math.max(l - 25, 15)),
+    900: hslToHex(h, Math.min(s + 20, 95), Math.max(l - 35, 10)),
+  };
+};
+
 export const colors = {
-  // Custom muted earth tone palette
-  muted: {
-    lavender: '#92898f',    // Muted grayish purple
-    gray: '#a19799',        // Muted gray
-    taupe: '#a17f6f',       // Muted brownish taupe
-    olive: '#9e8962',       // Muted olive/khaki
-    sage: '#757a59',        // Darker olive/sage green
-    black: '#000000',       // Pure black for contrast
-  },
+  // Brand colors (Dusty Rose - muted pinkish-purple)
+  brand: generateColorScale(baseColors.dustyRose),
 
-  // Brand colors updated with the new palette
-  brand: {
-    50: '#f7f6f6',    // Very light lavender
-    100: '#efedee',   // Light lavender
-    200: '#ddd8db',   // Lighter lavender
-    300: '#c4bcc1',   // Medium light lavender
-    400: '#a8a0a6',   // Medium lavender
-    500: '#92898f',   // Primary - muted lavender
-    600: '#827a80',   // Darker lavender
-    700: '#6d666b',   // Dark lavender
-    800: '#585257',   // Very dark lavender
-    900: '#423e42',   // Darkest lavender
-  },
+  // Accent colors (Blush Brown - muted brownish-pink)
+  accent: generateColorScale(baseColors.blushBrown),
 
-  // Accent colors using the earth tones
-  accent: {
-    50: '#f8f7f6',    // Very light taupe
-    100: '#f1efed',   // Light taupe
-    200: '#e0dcd8',   // Lighter taupe
-    300: '#cbc4bf',   // Medium light taupe
-    400: '#b6a9a2',   // Medium taupe
-    500: '#a17f6f',   // Primary - muted taupe
-    600: '#917264',   // Darker taupe
-    700: '#7a6054',   // Dark taupe
-    800: '#634e44',   // Very dark taupe
-    900: '#4c3c34',   // Darkest taupe
-  },
+  // Earth colors (Warm Bronze - muted golden-brown)
+  earth: generateColorScale(baseColors.warmBronze),
 
-  // Natural/earth palette
-  earth: {
-    50: '#f9f8f6',    // Very light olive
-    100: '#f2f1ec',   // Light olive
-    200: '#e3e0d6',   // Lighter olive
-    300: '#d0cab8',   // Medium light olive
-    400: '#bcb597',   // Medium olive
-    500: '#9e8962',   // Primary - muted olive
-    600: '#8e7b58',   // Darker olive
-    700: '#77674a',   // Dark olive
-    800: '#5f533c',   // Very dark olive
-    900: '#48402e',   // Darkest olive
-  },
+  // Sage colors (Olive Buff - muted olive-yellow)
+  sage: generateColorScale(baseColors.oliveBuff),
 
-  // Sage green palette
-  sage: {
-    50: '#f6f7f4',    // Very light sage
-    100: '#edeee8',   // Light sage
-    200: '#d8dbd0',   // Lighter sage
-    300: '#bfc4b2',   // Medium light sage
-    400: '#a4ab90',   // Medium sage
-    500: '#757a59',   // Primary - sage green
-    600: '#696e51',   // Darker sage
-    700: '#585c44',   // Dark sage
-    800: '#474a37',   // Very dark sage
-    900: '#36392b',   // Darkest sage
-  },
+  // Neutral colors (Sage Mist - muted sage green)
+  neutral: generateColorScale(baseColors.sageMist),
 
-  // Neutral grays based on the muted gray
-  neutral: {
-    50: '#fafafa',    // Very light gray
-    100: '#f4f4f4',   // Light gray
-    200: '#e4e4e4',   // Lighter gray
-    300: '#d1d1d1',   // Medium light gray
-    400: '#b4b4b4',   // Medium gray
-    500: '#a19799',   // Primary - muted gray
-    600: '#91888a',   // Darker gray
-    700: '#7a7274',   // Dark gray
-    800: '#625c5e',   // Very dark gray
-    900: '#4a4648',   // Darkest gray
-  },
-
-  // Updated portfolio grays
+  // Portfolio-specific color extensions
   portfolio: {
-    gray: {
-      50: '#fafafa',
-      100: '#f4f4f4',
-      200: '#e4e4e4',
-      300: '#d1d1d1',
-      400: '#b4b4b4',
-      500: '#a19799',
-      600: '#91888a',
-      700: '#7a7274',
-      800: '#625c5e',
-      900: '#4a4648',
-    },
+    background: baseColors.pureWhite,
+    surface: '#faf9f8',
+    onSurface: baseColors.deepBlack,
+    primary: baseColors.dustyRose,
+    onPrimary: baseColors.pureWhite,
+    secondary: baseColors.blushBrown,
+    onSecondary: baseColors.deepBlack,
+    accent: baseColors.warmBronze,
+    onAccent: baseColors.deepBlack,
+    muted: baseColors.sageMist,
+    onMuted: baseColors.deepBlack,
   },
-}; 
+};

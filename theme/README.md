@@ -75,7 +75,7 @@ function MyComponent() {
   const earthColor = theme.colors.earth[500];
 
   // Access muted colors directly
-  const sageColor = mutedColors.sage;
+  const sageColor = mutedColors.sageMist;
 
   return <div>Component content</div>;
 }
@@ -83,46 +83,47 @@ function MyComponent() {
 
 ## Color Palette
 
-### Muted Earth Tone Palette
+### Warm Golden-Pink Palette
 
 **Primary Colors:**
 
-- **Lavender**: `#92898f` - Muted grayish purple (brand primary)
-- **Gray**: `#a19799` - Muted gray (neutral base)
-- **Taupe**: `#a17f6f` - Muted brownish taupe (accent)
-- **Olive**: `#9e8962` - Muted olive/khaki (earth)
-- **Sage**: `#757a59` - Darker olive/sage green (sage)
-- **Black**: `#000000` - Pure black for contrast
+- **Dusty Rose**: `#795e6b` - Muted pinkish-purple (brand primary)
+- **Blush Brown**: `#9c7e7d` - Muted brownish-pink (accent)
+- **Warm Bronze**: `#b18c65` - Muted golden-brown (earth)
+- **Olive Buff**: `#bdb37e` - Muted olive-yellow (sage)
+- **Sage Mist**: `#adb89b` - Muted sage green (neutral)
+- **Pure White**: `#ffffff` - Clean white for contrast
+- **Deep Black**: `#000000` - Pure black for text
 
 ### Extended Color Scales
 
-**Brand Colors (Lavender)**
+**Brand Colors (Dusty Rose)**
 
-- Primary: `brand.500` (#92898f)
+- Primary: `brand.500` (#795e6b)
 - Light variants: `brand.50` to `brand.400`
 - Dark variants: `brand.600` to `brand.900`
 
-**Accent Colors (Taupe)**
+**Accent Colors (Blush Brown)**
 
-- Primary: `accent.500` (#a17f6f)
+- Primary: `accent.500` (#9c7e7d)
 - Light variants: `accent.50` to `accent.400`
 - Dark variants: `accent.600` to `accent.900`
 
-**Earth Colors (Olive)**
+**Earth Colors (Warm Bronze)**
 
-- Primary: `earth.500` (#9e8962)
+- Primary: `earth.500` (#b18c65)
 - Light variants: `earth.50` to `earth.400`
 - Dark variants: `earth.600` to `earth.900`
 
-**Sage Colors (Sage Green)**
+**Sage Colors (Olive Buff)**
 
-- Primary: `sage.500` (#757a59)
+- Primary: `sage.500` (#bdb37e)
 - Light variants: `sage.50` to `sage.400`
 - Dark variants: `sage.600` to `sage.900`
 
-**Neutral Colors (Gray)**
+**Neutral Colors (Sage Mist)**
 
-- Primary: `neutral.500` (#a19799)
+- Primary: `neutral.500` (#adb89b)
 - Light variants: `neutral.50` to `neutral.400`
 - Dark variants: `neutral.600` to `neutral.900`
 
@@ -212,36 +213,36 @@ The combination of Sora's clean geometric precision and Zen Maru Gothic's friend
 
 ### Design Philosophy
 
-**Muted Earth Tone Aesthetic:**
-The palette combines sophisticated neutrals with subtle earth tones to create a calming, professional atmosphere. This color scheme is perfect for portfolios, creative blogs, and professional applications that need to convey both creativity and reliability.
+**Warm Golden-Pink Aesthetic:**
+The palette combines sophisticated warm tones with gentle pinks and golden browns to create a cozy, elegant atmosphere. This color scheme is perfect for creative portfolios, lifestyle brands, and professional applications that want to convey warmth, sophistication, and approachability.
 
-**Modern Tech Sophistication:**
-The geometric Sora headings paired with muted earth tones creates a unique aesthetic that bridges cutting-edge technology with natural, grounded elements. Perfect for tech professionals who want to showcase innovation while maintaining human-centered design values.
+**Modern Warmth with Tech Precision:**
+The geometric Sora headings paired with warm golden-pink tones creates a unique aesthetic that bridges cutting-edge technology with human warmth and comfort. Perfect for professionals who want to showcase innovation while maintaining a welcoming, approachable feel.
 
 **Color Psychology:**
 
-- **Lavender**: Sophistication, creativity, calm
-- **Taupe**: Stability, warmth, approachability
-- **Olive**: Growth, natural harmony, sophistication
-- **Sage**: Wisdom, balance, tranquility
-- **Gray**: Professionalism, neutrality, foundation
+- **Dusty Rose**: Sophistication, creativity, gentle elegance
+- **Blush Brown**: Stability, warmth, earthy comfort
+- **Warm Bronze**: Growth, richness, golden hour warmth
+- **Olive Buff**: Wisdom, natural harmony, muted sophistication
+- **Sage Mist**: Balance, tranquility, gentle nature
 
 ## Component Variants
 
 ### Button
 
-- `solid` (default): Brand lavender color
+- `solid` (default): Brand dusty rose color
 - `outline`: Outlined with brand color
 - `ghost`: Transparent with brand color text
-- `earth`: Earth tone (olive) variant
-- `sage`: Sage green variant
+- `earth`: Earth tone (warm bronze) variant
+- `sage`: Sage (olive buff) variant
 
 ### Heading
 
-- `primary`: Brand lavender color
-- `secondary`: Neutral color
-- `earth`: Earth tone color
-- `sage`: Sage green color
+- `primary`: Brand dusty rose color
+- `secondary`: Neutral sage mist color
+- `earth`: Earth tone warm bronze color
+- `sage`: Sage olive buff color
 
 ### Text
 
@@ -257,11 +258,11 @@ The geometric Sora headings paired with muted earth tones creates a unique aesth
 
 ## Accessibility
 
-The muted earth tone palette maintains excellent contrast ratios:
+The warm golden-pink palette maintains excellent contrast ratios:
 
 - All text colors meet WCAG AA standards
 - Primary colors provide sufficient contrast against white/light backgrounds
-- Black (#000000) is available for maximum contrast when needed
+- Pure black (#000000) is available for maximum contrast when needed
 - Sora's clean geometric design ensures excellent readability across all screen sizes
 
 ## Usage Examples
@@ -269,12 +270,21 @@ The muted earth tone palette maintains excellent contrast ratios:
 ```tsx
 // Color combinations
 <Box bg="neutral.50" borderColor="brand.200">
-  <Heading variant="earth">Earth Tone Heading</Heading>
+  <Heading variant="earth">Warm Bronze Heading</Heading>
   <Text color="neutral.700">Readable body text</Text>
 </Box>
 
 // Button variations
-<Button variant="sage">Sage Action</Button>
-<Button variant="earth">Earth Action</Button>
+<Button variant="sage">Olive Buff Action</Button>
+<Button variant="earth">Warm Bronze Action</Button>
 <Button variant="outline">Outlined Action</Button>
 ```
+
+## Palette Inspiration
+
+This warm golden-pink palette evokes:
+
+- **Sunset over autumn fields** - the gentle transition from warm bronze to dusty rose
+- **Cozy coffee shops** - the blend of warm browns and sage greens
+- **Sophisticated comfort** - the balance of elegance and approachability
+- **Natural warmth** - earth tones that feel both modern and timeless

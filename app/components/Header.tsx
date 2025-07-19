@@ -1,18 +1,52 @@
 'use client';
 
-import { Box, Container, Flex, Heading, Spacer } from '@chakra-ui/react';
+import {
+  Box,
+  Container,
+  Heading,
+  HStack,
+  Link as ChakraLink,
+} from '@chakra-ui/react';
+import Link from 'next/link';
 
 export default function Header() {
   return (
-    <Box as="header" bg="gray.100" py={4} shadow="sm">
+    <Box
+      as="header"
+      bg="white"
+      borderBottom="1px solid"
+      borderColor="neutral.200"
+      py={4}
+    >
       <Container maxW="container.xl">
-        <Flex align="center">
-          <Heading as="h1" size="lg" color="gray.800">
-            Satoshi Iwako
-          </Heading>
-          <Spacer />
-          {/* Navigation items can be added here */}
-        </Flex>
+        <HStack justify="space-between" align="center">
+          <ChakraLink as={Link} href="/">
+            <Heading size="lg" color="brand.600">
+              Portfolio
+            </Heading>
+          </ChakraLink>
+
+          <HStack spacing={6}>
+            <ChakraLink
+              as={Link}
+              href="/"
+              color="neutral.700"
+              _hover={{ color: 'brand.600' }}
+              transition="color 0.2s"
+            >
+              Home
+            </ChakraLink>
+            <ChakraLink
+              as={Link}
+              href="/design-system"
+              color="neutral.700"
+              _hover={{ color: 'brand.600' }}
+              transition="color 0.2s"
+            >
+              Design System
+            </ChakraLink>
+          </HStack>
+        </HStack>
       </Container>
     </Box>
   );

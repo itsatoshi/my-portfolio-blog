@@ -1,105 +1,96 @@
 import { useTheme } from '@chakra-ui/react';
 
-// Hook to access theme values easily
+// Direct access to muted warm tone colors
+export const mutedColors = {
+  dustyRose: '#795e6b', // Muted pinkish-purple
+  blushBrown: '#9c7e7d', // Muted brownish-pink
+  warmBronze: '#b18c65', // Muted golden-brown
+  oliveBuff: '#bdb37e', // Muted olive-yellow
+  sageMist: '#adb89b', // Muted sage green
+  white: '#ffffff',
+  black: '#000000',
+};
+
+// Brand color shortcuts
+export const brandColors = {
+  primary: mutedColors.dustyRose,
+  accent: mutedColors.blushBrown,
+  earth: mutedColors.warmBronze,
+  sage: mutedColors.oliveBuff,
+  neutral: mutedColors.sageMist,
+  background: mutedColors.white,
+  text: mutedColors.black,
+};
+
+// Spacing constants
+export const spacing = {
+  xs: '0.5rem',
+  sm: '1rem',
+  md: '1.5rem',
+  lg: '2rem',
+  xl: '3rem',
+  '2xl': '4rem',
+};
+
+// Shadow presets
+export const shadows = {
+  subtle:
+    '0 1px 3px 0 rgba(121, 94, 107, 0.1), 0 1px 2px 0 rgba(121, 94, 107, 0.06)',
+  medium:
+    '0 4px 6px -1px rgba(121, 94, 107, 0.1), 0 2px 4px -1px rgba(121, 94, 107, 0.06)',
+  large:
+    '0 10px 15px -3px rgba(121, 94, 107, 0.1), 0 4px 6px -2px rgba(121, 94, 107, 0.05)',
+  xl: '0 20px 25px -5px rgba(121, 94, 107, 0.1), 0 10px 10px -5px rgba(121, 94, 107, 0.04)',
+};
+
+// Breakpoints
+export const breakpoints = {
+  sm: '480px',
+  md: '768px',
+  lg: '992px',
+  xl: '1280px',
+  '2xl': '1536px',
+};
+
+// Transition presets
+export const transitions = {
+  fast: '150ms ease-in-out',
+  medium: '250ms ease-in-out',
+  slow: '350ms ease-in-out',
+};
+
+// Size constants
+export const sizes = {
+  container: {
+    sm: '640px',
+    md: '768px',
+    lg: '1024px',
+    xl: '1280px',
+  },
+  button: {
+    sm: '2rem',
+    md: '2.5rem',
+    lg: '3rem',
+  },
+};
+
+// Color palette helpers
+export const getColorPalette = () => ({
+  warm: {
+    dustyRose: mutedColors.dustyRose,
+    blushBrown: mutedColors.blushBrown,
+    warmBronze: mutedColors.warmBronze,
+    oliveBuff: mutedColors.oliveBuff,
+    sageMist: mutedColors.sageMist,
+  },
+  neutral: {
+    white: mutedColors.white,
+    black: mutedColors.black,
+  },
+});
+
+// Hook to access custom theme
 export const useCustomTheme = () => {
   const theme = useTheme();
   return theme;
 };
-
-// Color palette helpers updated with new muted palette
-export const brandColors = {
-  // Primary brand colors (muted lavender)
-  primary: 'brand.500',
-  primaryHover: 'brand.600',
-  primaryActive: 'brand.700',
-  primaryLight: 'brand.50',
-  
-  // Secondary accent colors (muted taupe)
-  secondary: 'accent.500',
-  secondaryHover: 'accent.600',
-  
-  // Earth tone colors
-  earth: 'earth.500',
-  earthHover: 'earth.600',
-  
-  // Sage colors
-  sage: 'sage.500',
-  sageHover: 'sage.600',
-  
-  // Text colors
-  text: 'neutral.800',
-  textSecondary: 'neutral.600',
-  textMuted: 'neutral.500',
-  textContrast: 'black',
-  
-  // Background colors
-  background: 'neutral.50',
-  backgroundWhite: 'white',
-  backgroundMuted: 'neutral.100',
-  
-  // Border colors
-  border: 'neutral.200',
-  borderMuted: 'neutral.300',
-} as const;
-
-// Muted color palette for direct access
-export const mutedColors = {
-  lavender: '#92898f',
-  gray: '#a19799',
-  taupe: '#a17f6f',
-  olive: '#9e8962',
-  sage: '#757a59',
-  black: '#000000',
-} as const;
-
-// Common spacing values
-export const spacing = {
-  xs: 2,
-  sm: 4,
-  md: 6,
-  lg: 8,
-  xl: 12,
-  '2xl': 16,
-  '3xl': 20,
-  '4xl': 24,
-} as const;
-
-// Common shadow values
-export const shadows = {
-  card: 'card',
-  cardHover: 'cardHover',
-  subtle: 'sm',
-  medium: 'md',
-  strong: 'lg',
-} as const;
-
-// Responsive breakpoints helper
-export const breakpoints = {
-  mobile: 'base',
-  tablet: 'md',
-  desktop: 'lg',
-  wide: 'xl',
-} as const;
-
-// Animation durations
-export const transitions = {
-  fast: '0.1s',
-  normal: '0.2s',
-  slow: '0.3s',
-  slower: '0.5s',
-} as const;
-
-// Common component sizes
-export const sizes = {
-  button: {
-    small: 'sm',
-    medium: 'md',
-    large: 'lg',
-  },
-  heading: {
-    small: 'sm',
-    medium: 'lg',
-    large: 'xl',
-    extraLarge: '2xl',
-  },
-} as const; 
