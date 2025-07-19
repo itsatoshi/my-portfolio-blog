@@ -1,9 +1,11 @@
-import type { Metadata } from 'next';
-import { Providers } from './providers';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import { Box, Flex } from '@chakra-ui/react';
 import './globals.css';
+
+import { Box, Flex } from '@chakra-ui/react';
+import type { Metadata } from 'next';
+
+import Footer from './components/Footer';
+import Header from './components/Header';
+import { Providers } from './providers';
 
 export const metadata: Metadata = {
   title: 'My Portfolio Blog',

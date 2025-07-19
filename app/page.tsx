@@ -1,13 +1,13 @@
 'use client';
 
 import {
+  Box,
+  Button,
   Container,
   Heading,
+  HStack,
   Text,
   VStack,
-  Button,
-  HStack,
-  Box,
 } from '@chakra-ui/react';
 
 export default function Home() {
