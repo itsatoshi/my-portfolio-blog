@@ -1,6 +1,6 @@
 import { ComponentStyleConfig } from '@chakra-ui/react';
 
-// Button component styles
+// Button component styles updated with new palette
 const Button: ComponentStyleConfig = {
   baseStyle: {
     fontWeight: 'semibold',
@@ -44,19 +44,51 @@ const Button: ComponentStyleConfig = {
     outline: {
       border: '2px solid',
       borderColor: 'brand.500',
-      color: 'brand.500',
+      color: 'brand.700',
       _hover: {
         bg: 'brand.50',
+        borderColor: 'brand.600',
         transform: 'translateY(-1px)',
         boxShadow: 'md',
       },
       transition: 'all 0.2s',
     },
     ghost: {
-      color: 'brand.500',
+      color: 'brand.600',
       _hover: {
         bg: 'brand.50',
+        color: 'brand.700',
       },
+    },
+    // New earth tone variant
+    earth: {
+      bg: 'earth.500',
+      color: 'white',
+      _hover: {
+        bg: 'earth.600',
+        transform: 'translateY(-2px)',
+        boxShadow: 'lg',
+      },
+      _active: {
+        bg: 'earth.700',
+        transform: 'translateY(0)',
+      },
+      transition: 'all 0.2s',
+    },
+    // New sage variant
+    sage: {
+      bg: 'sage.500',
+      color: 'white',
+      _hover: {
+        bg: 'sage.600',
+        transform: 'translateY(-2px)',
+        boxShadow: 'lg',
+      },
+      _active: {
+        bg: 'sage.700',
+        transform: 'translateY(0)',
+      },
+      transition: 'all 0.2s',
     },
   },
   defaultProps: {
@@ -65,7 +97,7 @@ const Button: ComponentStyleConfig = {
   },
 };
 
-// Heading component styles
+// Heading component styles updated
 const Heading: ComponentStyleConfig = {
   baseStyle: {
     fontFamily: 'heading',
@@ -97,7 +129,13 @@ const Heading: ComponentStyleConfig = {
       color: 'brand.600',
     },
     secondary: {
-      color: 'gray.600',
+      color: 'neutral.700',
+    },
+    earth: {
+      color: 'earth.600',
+    },
+    sage: {
+      color: 'sage.600',
     },
   },
   defaultProps: {
@@ -105,7 +143,7 @@ const Heading: ComponentStyleConfig = {
   },
 };
 
-// Text component styles
+// Text component styles updated
 const Text: ComponentStyleConfig = {
   baseStyle: {
     lineHeight: 'base',
@@ -113,16 +151,20 @@ const Text: ComponentStyleConfig = {
   variants: {
     body: {
       fontSize: 'md',
-      color: 'gray.700',
+      color: 'neutral.700',
     },
     caption: {
       fontSize: 'sm',
-      color: 'gray.500',
+      color: 'neutral.500',
     },
     subtitle: {
       fontSize: 'lg',
-      color: 'gray.600',
+      color: 'neutral.600',
       fontWeight: 'medium',
+    },
+    muted: {
+      fontSize: 'md',
+      color: 'neutral.500',
     },
   },
   defaultProps: {
@@ -138,7 +180,7 @@ const Container: ComponentStyleConfig = {
   },
 };
 
-// Box component styles (can be used for custom cards)
+// Box component styles (for custom cards)
 const Box: ComponentStyleConfig = {
   variants: {
     card: {
@@ -150,6 +192,19 @@ const Box: ComponentStyleConfig = {
       _hover: {
         boxShadow: 'cardHover',
         transform: 'translateY(-4px)',
+      },
+    },
+    mutedCard: {
+      bg: 'neutral.50',
+      borderRadius: 'xl',
+      border: '1px solid',
+      borderColor: 'neutral.200',
+      p: 6,
+      transition: 'all 0.3s ease-in-out',
+      _hover: {
+        borderColor: 'brand.300',
+        transform: 'translateY(-2px)',
+        boxShadow: 'md',
       },
     },
   },

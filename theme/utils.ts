@@ -6,20 +6,50 @@ export const useCustomTheme = () => {
   return theme;
 };
 
-// Color palette helpers
+// Color palette helpers updated with new muted palette
 export const brandColors = {
+  // Primary brand colors (muted lavender)
   primary: 'brand.500',
   primaryHover: 'brand.600',
   primaryActive: 'brand.700',
   primaryLight: 'brand.50',
+  
+  // Secondary accent colors (muted taupe)
   secondary: 'accent.500',
   secondaryHover: 'accent.600',
-  text: 'gray.800',
-  textSecondary: 'gray.600',
-  textMuted: 'gray.500',
-  background: 'gray.50',
+  
+  // Earth tone colors
+  earth: 'earth.500',
+  earthHover: 'earth.600',
+  
+  // Sage colors
+  sage: 'sage.500',
+  sageHover: 'sage.600',
+  
+  // Text colors
+  text: 'neutral.800',
+  textSecondary: 'neutral.600',
+  textMuted: 'neutral.500',
+  textContrast: 'black',
+  
+  // Background colors
+  background: 'neutral.50',
   backgroundWhite: 'white',
-  border: 'gray.200',
+  backgroundMuted: 'neutral.100',
+  
+  // Border colors
+  border: 'neutral.200',
+  borderMuted: 'neutral.300',
+} as const;
+
+// Muted color palette for direct access
+export const mutedColors = {
+  lavender: '#92898f',
+  gray: '#a19799',
+  taupe: '#a17f6f',
+  olive: '#9e8962',
+  sage: '#757a59',
+  black: '#000000',
 } as const;
 
 // Common spacing values

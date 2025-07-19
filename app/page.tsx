@@ -6,55 +6,72 @@ import {
   Container,
   Heading,
   HStack,
+  SimpleGrid,
   Text,
   VStack,
 } from '@chakra-ui/react';
 
+import { brandColors, spacing } from '../theme/utils';
+import ColorShowcase from './components/ColorShowcase';
+import TestFont from './test-font';
+
 export default function Home() {
+  const cardStyles = {
+    bg: 'white',
+    borderRadius: 'xl',
+    boxShadow: 'card',
+    p: 6,
+    transition: 'all 0.3s ease-in-out',
+    _hover: {
+      boxShadow: 'cardHover',
+      transform: 'translateY(-4px)',
+    },
+  };
+
   return (
     <Container maxW="container.xl">
-      <VStack spacing={8} align="center" py={16}>
+      <VStack spacing={spacing.xl} align="center" py={16}>
+        {/* Color Showcase */}
+        <ColorShowcase />
+        
+        {/* Font Test Section */}
+        <TestFont />
+        
+        {/* Original Content */}
         <Box textAlign="center">
-          <Heading as="h1" size="2xl" mb={4}>
+          <Heading variant="primary" size="2xl" mb={4}>
             Welcome to My Portfolio Blog
           </Heading>
-          <Text fontSize="xl" color="gray.600" maxW="2xl">
-            A modern portfolio blog built with Next.js, Chakra UI, and the
-            latest React technologies
+          <Text variant="subtitle" maxW="2xl">
+            A modern portfolio blog built with Next.js, Chakra UI, and a
+            sophisticated muted earth tone palette featuring custom typography
           </Text>
         </Box>
 
-        <VStack spacing={4}>
-          <Text fontSize="lg" fontWeight="medium">
-            Technologies used in this project:
-          </Text>
-          <HStack spacing={4} flexWrap="wrap" justify="center">
-            <Button colorScheme="blue" variant="outline" size="sm">
+        {/* Technology Stack */}
+        <VStack spacing={spacing.md}>
+          <Heading variant="secondary" size="lg">
+            Technology Stack
+          </Heading>
+          <HStack spacing={spacing.sm} flexWrap="wrap" justify="center">
+            <Button variant="solid" size="sm">
               React 19
             </Button>
-            <Button colorScheme="blue" variant="outline" size="sm">
+            <Button variant="earth" size="sm">
               Next.js 15
             </Button>
-            <Button colorScheme="blue" variant="outline" size="sm">
+            <Button variant="sage" size="sm">
               Chakra UI
             </Button>
-            <Button colorScheme="blue" variant="outline" size="sm">
+            <Button variant="outline" size="sm">
               TypeScript
-            </Button>
-            <Button colorScheme="blue" variant="outline" size="sm">
-              React Query
-            </Button>
-            <Button colorScheme="blue" variant="outline" size="sm">
-              React Hook Form
-            </Button>
-            <Button colorScheme="blue" variant="outline" size="sm">
-              Playwright
             </Button>
           </HStack>
         </VStack>
 
-        <HStack spacing={4}>
-          <Button colorScheme="blue" size="lg">
+        {/* Call to Action */}
+        <HStack spacing={spacing.md}>
+          <Button variant="solid" size="lg">
             Get Started
           </Button>
           <Button variant="outline" size="lg">
