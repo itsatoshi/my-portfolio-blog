@@ -8,12 +8,36 @@ import {
   Text,
   VStack,
 } from '@chakra-ui/react';
+import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Home() {
   return (
     <Container maxW="container.lg" py={12}>
       <VStack spacing={8} textAlign="center">
+        {/* Profile Image */}
+        <Box
+          position="relative"
+          w={200}
+          h={200}
+          borderRadius="full"
+          overflow="hidden"
+          bgColor="earth.300"
+          border="8px solid white"
+          boxShadow="md"
+          bgImage="url('/images/backgrounds/topography.svg')"
+        >
+          <Image
+            src="/images/memoji.png"
+            alt=""
+            sizes="200px"
+            fill
+            style={{
+              objectFit: 'cover',
+            }}
+          />
+        </Box>
+
         <Box>
           <Heading size="3xl" mb={4} color="brand.600">
             Welcome to My Portfolio

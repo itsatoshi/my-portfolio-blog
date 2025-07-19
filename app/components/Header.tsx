@@ -22,7 +22,7 @@ export default function Header() {
         <HStack justify="space-between" align="center">
           <ChakraLink as={Link} href="/">
             <Heading size="lg" color="brand.600">
-              Portfolio
+              @itsatoshi
             </Heading>
           </ChakraLink>
 
