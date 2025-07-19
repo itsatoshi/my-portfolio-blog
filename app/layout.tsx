@@ -2,7 +2,7 @@ import './globals.css';
 
 import { Box, Flex } from '@chakra-ui/react';
 import type { Metadata } from 'next';
-import { Lexend, Zen_Maru_Gothic } from 'next/font/google';
+import { Sora, Zen_Maru_Gothic } from 'next/font/google';
 
 import Footer from './components/Footer';
 import Header from './components/Header';
@@ -16,10 +16,10 @@ const zenMaruGothic = Zen_Maru_Gothic({
   preload: true,
 });
 
-const lexend = Lexend({
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+const sora = Sora({
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800'],
   subsets: ['latin', 'latin-ext'],
-  variable: '--font-lexend',
+  variable: '--font-sora',
   display: 'swap',
   preload: true,
 });
@@ -35,7 +35,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${zenMaruGothic.variable} ${lexend.variable}`}>
+    <html lang="en" className={`${zenMaruGothic.variable} ${sora.variable}`}>
       <body>
         <Providers>
           <Flex direction="column" minHeight="100vh">

@@ -1,6 +1,6 @@
 export const typography = {
   fonts: {
-    heading: `var(--font-lexend), 'Lexend', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
+    heading: `var(--font-sora), 'Sora', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif`,
     body: `var(--font-zen-maru-gothic), 'Zen Maru Gothic', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
     mono: `'JetBrains Mono', 'Fira Code', 'Consolas', 'Monaco', 'Courier New', monospace`,
   },

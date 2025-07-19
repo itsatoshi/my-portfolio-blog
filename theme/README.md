@@ -128,7 +128,7 @@ function MyComponent() {
 
 ## Typography
 
-- **Heading Font**: Lexend (Google Fonts via next/font/google)
+- **Heading Font**: Sora (Google Fonts via next/font/google)
 - **Body Font**: Zen Maru Gothic (Google Fonts via next/font/google)
 - **Mono Font**: JetBrains Mono, Fira Code
 
@@ -138,12 +138,12 @@ Both fonts use Google Fonts optimization through Next.js:
 
 ```typescript
 // In app/layout.tsx
-import { Lexend, Zen_Maru_Gothic } from 'next/font/google';
+import { Sora, Zen_Maru_Gothic } from 'next/font/google';
 
-const lexend = Lexend({
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+const sora = Sora({
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800'],
   subsets: ['latin', 'latin-ext'],
-  variable: '--font-lexend',
+  variable: '--font-sora',
   display: 'swap',
   preload: true,
 });
@@ -157,7 +157,7 @@ const zenMaruGothic = Zen_Maru_Gothic({
 });
 
 // Applied to html element
-<html className={`${zenMaruGothic.variable} ${lexend.variable}`}>
+<html className={`${zenMaruGothic.variable} ${sora.variable}`}>
 ```
 
 The theme then references them via CSS variables:
@@ -165,15 +165,58 @@ The theme then references them via CSS variables:
 ```typescript
 // In theme/typography.ts
 fonts: {
-  heading: `var(--font-lexend), 'Lexend', -apple-system, BlinkMacSystemFont, sans-serif`,
+  heading: `var(--font-sora), 'Sora', -apple-system, BlinkMacSystemFont, sans-serif`,
   body: `var(--font-zen-maru-gothic), 'Zen Maru Gothic', fallbacks...`,
 }
 ```
+
+### Font Characteristics & Pairing
+
+**Sora (Headings)**
+
+- **Style**: Modern geometric sans-serif with tech-inspired precision
+- **Character**: Clean, contemporary, sophisticated with startup appeal
+- **Best for**: Headings, titles, tech portfolios, modern brands, digital products
+- **Weights**: 100, 200, 300, 400, 500, 600, 700, 800
+- **Special Feature**: Optimized for digital interfaces with excellent screen clarity
+
+**Zen Maru Gothic (Body)**
+
+- **Style**: Rounded, friendly sans-serif
+- **Character**: Approachable, modern, readable
+- **Best for**: Body text, UI elements, content
+- **Weights**: 300, 400, 500, 700
+
+**Why This Pairing Works:**
+The combination of Sora's clean geometric precision and Zen Maru Gothic's friendly rounded style creates a sophisticated tech-forward typography system. Sora brings modern startup elegance and professional clarity to headings, perfect for digital products and contemporary brands, while Zen Maru Gothic maintains approachability and warmth in body content. This pairing is ideal for tech professionals, startups, designers, SaaS products, and anyone building a modern, forward-thinking digital presence.
+
+### Font Weights Available
+
+**Sora (Headings):**
+
+- **Thin (100)**: Ultra-light, elegant headings
+- **Extra Light (200)**: Very light, refined headings
+- **Light (300)**: Subtle, clean headings
+- **Regular (400)**: Standard heading weight
+- **Medium (500)**: Slightly emphasized headings
+- **Semi-bold (600)**: Medium emphasis headings
+- **Bold (700)**: Strong emphasis headings
+- **Extra Bold (800)**: Maximum impact headings
+
+**Zen Maru Gothic (Body):**
+
+- **Light (300)**: Subtle, elegant text
+- **Regular (400)**: Standard body text
+- **Medium (500)**: Emphasized content
+- **Bold (700)**: Strong emphasis
 
 ### Design Philosophy
 
 **Muted Earth Tone Aesthetic:**
 The palette combines sophisticated neutrals with subtle earth tones to create a calming, professional atmosphere. This color scheme is perfect for portfolios, creative blogs, and professional applications that need to convey both creativity and reliability.
+
+**Modern Tech Sophistication:**
+The geometric Sora headings paired with muted earth tones creates a unique aesthetic that bridges cutting-edge technology with natural, grounded elements. Perfect for tech professionals who want to showcase innovation while maintaining human-centered design values.
 
 **Color Psychology:**
 
@@ -219,6 +262,7 @@ The muted earth tone palette maintains excellent contrast ratios:
 - All text colors meet WCAG AA standards
 - Primary colors provide sufficient contrast against white/light backgrounds
 - Black (#000000) is available for maximum contrast when needed
+- Sora's clean geometric design ensures excellent readability across all screen sizes
 
 ## Usage Examples
 

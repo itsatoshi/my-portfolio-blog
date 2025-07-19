@@ -8,7 +8,7 @@ export default function Header() {
       <Container maxW="container.xl">
         <Flex align="center">
           <Heading as="h1" size="lg" color="gray.800">
-            My Portfolio Blog
+            Satoshi Iwako
           </Heading>
           <Spacer />
           {/* Navigation items can be added here */}

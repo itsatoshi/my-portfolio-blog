@@ -9,44 +9,41 @@ export default function TestFont() {
       
       {/* Heading Font Tests */}
       <Box>
-        <Text fontSize="sm" color="gray.500" mb={3}>
-          Heading Font - Lexend:
+        <Text fontSize="sm" color="neutral.600" mb={3}>
+          Heading Font - Sora:
         </Text>
         <VStack align="start" spacing={2}>
-          <div style={{ fontFamily: 'var(--font-lexend), sans-serif', fontSize: '2rem', fontWeight: 100 }}>
+          <div style={{ fontFamily: 'var(--font-sora), sans-serif', fontSize: '2rem', fontWeight: 100 }}>
             Thin Heading (100)
           </div>
-          <div style={{ fontFamily: 'var(--font-lexend), sans-serif', fontSize: '1.75rem', fontWeight: 200 }}>
+          <div style={{ fontFamily: 'var(--font-sora), sans-serif', fontSize: '1.875rem', fontWeight: 200 }}>
             Extra Light Heading (200)
           </div>
-          <div style={{ fontFamily: 'var(--font-lexend), sans-serif', fontSize: '1.5rem', fontWeight: 300 }}>
+          <div style={{ fontFamily: 'var(--font-sora), sans-serif', fontSize: '1.75rem', fontWeight: 300 }}>
             Light Heading (300)
           </div>
-          <div style={{ fontFamily: 'var(--font-lexend), sans-serif', fontSize: '1.375rem', fontWeight: 400 }}>
+          <div style={{ fontFamily: 'var(--font-sora), sans-serif', fontSize: '1.625rem', fontWeight: 400 }}>
             Regular Heading (400)
           </div>
-          <div style={{ fontFamily: 'var(--font-lexend), sans-serif', fontSize: '1.25rem', fontWeight: 500 }}>
+          <div style={{ fontFamily: 'var(--font-sora), sans-serif', fontSize: '1.5rem', fontWeight: 500 }}>
             Medium Heading (500)
           </div>
-          <div style={{ fontFamily: 'var(--font-lexend), sans-serif', fontSize: '1.125rem', fontWeight: 600 }}>
+          <div style={{ fontFamily: 'var(--font-sora), sans-serif', fontSize: '1.375rem', fontWeight: 600 }}>
             Semi-bold Heading (600)
           </div>
-          <div style={{ fontFamily: 'var(--font-lexend), sans-serif', fontSize: '1rem', fontWeight: 700 }}>
+          <div style={{ fontFamily: 'var(--font-sora), sans-serif', fontSize: '1.25rem', fontWeight: 700 }}>
             Bold Heading (700)
           </div>
-          <div style={{ fontFamily: 'var(--font-lexend), sans-serif', fontSize: '0.95rem', fontWeight: 800 }}>
+          <div style={{ fontFamily: 'var(--font-sora), sans-serif', fontSize: '1.125rem', fontWeight: 800 }}>
             Extra Bold Heading (800)
-          </div>
-          <div style={{ fontFamily: 'var(--font-lexend), sans-serif', fontSize: '0.9rem', fontWeight: 900 }}>
-            Black Heading (900)
           </div>
         </VStack>
       </Box>
 
       {/* Chakra Heading Tests */}
       <Box>
-        <Text fontSize="sm" color="gray.500" mb={3}>
-          Chakra Headings with Lexend:
+        <Text fontSize="sm" color="neutral.600" mb={3}>
+          Chakra Headings with Sora:
         </Text>
         <VStack align="start" spacing={2}>
           <Heading as="h1" size="2xl" variant="primary">
@@ -55,18 +52,18 @@ export default function TestFont() {
           <Heading as="h2" size="xl" variant="secondary">
             Secondary Heading H2
           </Heading>
-          <Heading as="h3" size="lg">
-            Regular Heading H3
+          <Heading as="h3" size="lg" variant="earth">
+            Earth Heading H3
           </Heading>
-          <Heading as="h4" size="md">
-            Smaller Heading H4
+          <Heading as="h4" size="md" variant="sage">
+            Sage Heading H4
           </Heading>
         </VStack>
       </Box>
       
       {/* Body Font Tests */}
       <Box>
-        <Text fontSize="sm" color="gray.500" mb={3}>
+        <Text fontSize="sm" color="neutral.600" mb={3}>
           Body Font - Zen Maru Gothic:
         </Text>
         <VStack align="start" spacing={1}>
@@ -87,7 +84,7 @@ export default function TestFont() {
 
       {/* Chakra Body Text Tests */}
       <Box>
-        <Text fontSize="sm" color="gray.500" mb={3}>
+        <Text fontSize="sm" color="neutral.600" mb={3}>
           Chakra Text with Zen Maru Gothic:
         </Text>
         <VStack align="start" spacing={2}>
@@ -104,12 +101,12 @@ export default function TestFont() {
       </Box>
 
       {/* Font Pairing Demo */}
-      <Box borderWidth="1px" borderColor="gray.200" borderRadius="lg" p={4} bg="gray.50">
+      <Box borderWidth="1px" borderColor="neutral.200" borderRadius="lg" p={4} bg="neutral.50">
         <Heading size="lg" mb={3} fontFamily="heading">
-          Optimal Reading Experience
+          Modern Tech Sophistication
         </Heading>
         <Text fontFamily="body" fontSize="md" lineHeight="tall">
-          The combination of Lexend for headings and Zen Maru Gothic for body text creates an typography system optimized for reading proficiency. Lexend&apos;s research-backed design enhances comprehension and reading speed, while Zen Maru Gothic provides warmth and approachability to create an engaging content experience.
+          The combination of Sora for headings and Zen Maru Gothic for body text creates a contemporary startup-inspired typography system. Sora&apos;s clean geometric character brings modern tech elegance and precision to headings, while Zen Maru Gothic maintains friendly approachability and excellent readability for body content. This pairing is perfect for tech professionals, startups, designers, and anyone building a modern, forward-thinking digital presence.
         </Text>
       </Box>
     </VStack>
