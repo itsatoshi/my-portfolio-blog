@@ -1,27 +1,45 @@
 {
-  "name": "nextjs",
+  "name": "my-portfolio-blog",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "prettier": "prettier --check .",
+    "prettier:fix": "prettier --write .",
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "prepare": "husky"
   },
   "dependencies": {
-    "next": "15.2.0",
-    "react": "19.0.0",
-    "react-dom": "19.0.0"
+    "@chakra-ui/react": "2.10.4",
+    "@emotion/react": "11.11.4",
+    "@emotion/styled": "11.11.0",
+    "framer-motion": "11.11.8",
+    "next": "15.4.2",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-hook-form": "7.54.2",
+    "@tanstack/react-query": "5.61.5"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.6.0",
+    "@commitlint/config-conventional": "^19.6.0",
     "@eslint/eslintrc": "^3",
+    "@playwright/test": "^1.50.2",
     "@types/node": "^20",
     "@types/react": "19.0.10",
     "@types/react-dom": "19.0.4",
     "eslint": "^9",
     "eslint-config-next": "15.2.0",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.2.11",
+    "prettier": "^3.4.2",
     "typescript": "^5"
   },
   "pnpm": {
@@ -29,5 +47,6 @@
       "@types/react": "19.0.10",
       "@types/react-dom": "19.0.4"
     }
-  }
+  },
+  "packageManager": "pnpm@9.5.0+sha512.140036830124618d624a2187b50d04289d5a087f326c9edfc0ccd733d76c4f52c3a313d4fc148794a2a9d81553016004e6742e8cf850670268a7387fc220c903"
 }
